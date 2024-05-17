@@ -1,0 +1,42 @@
+.menuContainer{
+    width: 6rem;
+    height: 100vh;
+    background-color: #10101C;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+}
+.menuList{
+    /* padding: 1.5rem; */
+    font-family: "Inika", serif;
+    /* padding-top: 2rem; */
+}
+
+.subMenu{
+    /* border: 1px solid red; */
+    width: 100%;
+    height: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+   padding-top: 0.25rem;
+   padding-bottom: 0.25rem;
+   margin-top: 0.75rem;
+}
+
+.subMenu>p{
+    margin-top: 1px;
+    text-align: center;
+    font-size: 0.75rem;
+}
+
+.subMenu>img{
+    
+    /* border: 1px solid white; */
+    width: 2rem;
+    height: 2rem;
+}
+
+.subMenu:nth-child(8){
+    background-image: linear-gradient(#18BFF1,#0A78F3);
+    border-radius: 0.25rem;
+}
