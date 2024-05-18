@@ -27,6 +27,8 @@
     margin-top: 1px;
     text-align: center;
     font-size: 0.75rem;
+    color: #FFFFFF;
+    text-decoration: none;
 }
 
 .subMenu>img{
@@ -40,3 +42,4 @@
     background-image: linear-gradient(#18BFF1,#0A78F3);
     border-radius: 0.25rem;
 }
+

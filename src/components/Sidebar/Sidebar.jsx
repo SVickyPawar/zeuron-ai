@@ -10,20 +10,27 @@ import radiography from '../../assets/radiography.png';
 import analysis from '../../assets/analysis.png';
 import help from '../../assets/help.png';
 import settings from '../../assets/settings.png';
+import { Link } from 'react-router-dom';
 
 
 const Sidebar = () => {
   return (
 		<div className={styles.menuContainer}>
 			<div className={styles.menuList}>
+			<Link to='/'>
 				<div className={styles.subMenu}>
 					<img src={group} alt="" />
 					<p>General</p>
 				</div>
+				</Link>
+
+				<Link to='/optimetry'>
 				<div className={styles.subMenu}>
 					<img src={optometry} alt="" />
 					<p>Optimetry</p>
 				</div>
+				</Link>
+				
 				<div className={styles.subMenu}>
 					<img src={neurology} alt="" />
 					<p>Neurology</p>

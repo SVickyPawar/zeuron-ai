@@ -1,3 +1,9 @@
+.container {
+    display: flex;
+    /* border: 1px solid green; */
+    height: 100%;
+}
+
 .humanContainer {
     position: relative;
     left: 30px;
@@ -6,12 +12,13 @@
 .skeleton {
     position: relative;
     width: 200px;
-    height: 650px;
+    height: 640px;
     object-fit: contain;
     margin-left: 30px;
-    top: 40px;
+    top: 50px;
     opacity: 0;
     transition: opacity 2s ease-in-out;
+    /* border: 1px solid red; */
 }
 
 .heart {
@@ -29,7 +36,7 @@
     height: 100px;
     object-fit: cover;
     position: absolute;
-    bottom: -58px;
+    bottom: 0;
 }
 
 .line {
@@ -38,7 +45,7 @@
     left: 30px;
     width: 200px;
     height: 2px;
-    background-color: blue;
+    background-color: #4A93B3;
     animation: moveLine 2s forwards;
 }
 
@@ -47,7 +54,7 @@
         bottom: 0;
     }
     to {
-        bottom: 650px;
+        bottom: 690px;
     }
 }
 
@@ -60,6 +67,12 @@
     0% {
         opacity: 0;
     }
+    50% {
+        opacity: 0.25;
+    }
+    80% {
+        opacity: 0.5;
+    }
     100% {
         opacity: 1;
     }
@@ -70,10 +83,208 @@
 }
 
 @keyframes blink {
-    0%, 100% {
-        opacity: 1;
+    0% {
+        opacity: 0;
     }
     50% {
         opacity: 0;
     }
+    100% {
+        opacity: 1;
+    }
 }
+
+.analysis {
+    position: relative;
+    left: 150px;
+    width: 1000px;
+    height: 100%;
+    /* border: 1px solid maroon; */
+    overflow: hidden;
+}
+
+.info_box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* border: 1px solid green; */
+    height: 40px;
+    position: relative;
+    top: 15px;
+}
+
+.heading {
+    font-family: "Inika", serif;
+    font-size: 20px;
+    font-weight: 700;
+    opacity: 0;
+    transform: translateX(-100%);
+    transition: transform 1s ease-in-out, opacity 2s ease-in-out;
+}
+
+.start .heading {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.date_img {
+    display: flex;
+    width: 400px;
+    height: 40px;
+    object-fit: contain;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.start_date {
+    color: #6AA7C4;
+    font-weight: 700;
+}
+
+.meter_box {
+    /* border: 1px solid white; */
+    width: 95%;
+    height: 220px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.single_meter {
+    width: 240px;
+    height: 220px;
+    /* border: 1px solid sandybrown; */
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    object-fit: cover;
+}
+
+.speedometer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.speedometer::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 52%;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 4px solid transparent;
+    border-bottom-color: #4A93B3;
+    transform-origin: center;
+    transform: translate(-50%, -50%) rotate(0deg);
+    animation: fillSpeedometer 1s linear forwards;
+}
+
+.single_meter:nth-child(2) .speedometer::before {
+    border-bottom-color: #D1CC71;
+}
+
+@keyframes fillSpeedometer {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(90deg);
+    }
+}
+
+.vitamin {
+   position: relative;
+   top: 10px;
+    display: flex;
+    width: 310px;
+    height: 40px;
+    object-fit: contain;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+
+.graphContainer {
+    /* border: 1px solid salmon; */
+    position: relative;
+    top: 40px;
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+
+.marks {
+    position: absolute;
+}
+
+.graph {
+    position: absolute;
+    width: 85%;
+    bottom: 0;
+    right: 0;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-image: url('../../assets/graph.png');
+    animation: growGraph 2s ease-in-out forwards;
+}
+
+@keyframes growGraph {
+    0% {
+        height: 0;
+    }
+    100% {
+        height: 95%;
+    }
+}
+
+.start .graph {
+    height: 95%; /* Ensures the graph stays at full height after animation completes */
+}
+
+.card_info {
+    position: relative;
+    top: 80px;
+    width: 100%;
+    height: 120px;
+    /* border: 1px solid pink; */
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .first_card {
+    width: 0; /* Start with 0 width */
+    height: 100%;
+    object-fit: cover;
+    background-image: url('../../assets/first_card.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    animation: growWidth 2s forwards; /* Apply the animation */
+  }
+  
+  .second_card {
+    width: 0; /* Start with 0 width */
+    height: 100%;
+    object-fit: cover;
+    background-image: url('../../assets/second_card.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    animation: growWidth 2s forwards; /* Apply the animation */
+  }
+  
+  @keyframes growWidth {
+    0% {
+      width: 0; /* Start with 0 width */
+    }
+    100% {
+      width: 40%; /* End with full width */
+    }
+  }
