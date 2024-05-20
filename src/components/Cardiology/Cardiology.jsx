@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import * as styles from './optimetry.module.css';
+import * as styles from './cardiology.module.css';
 import bottomLoading from '../../assets/bottomLoading.png';
-import human from '../../assets/human.png';
-import humanFilled from '../../assets/humanFilled.png';
+import human from '../../assets/humanFilled.png';
+import heart from '../../assets/heartFilled.png';
 import export_button from '../../assets/export-button.png';
 import meter from '../../assets/heart_meter.png';
 import meter_two from '../../assets/second_speedometer.png';
@@ -11,24 +11,22 @@ import graphValues from '../../assets/graph_values.png';
 import first_card from '../../assets/first_card.png';
 import second_card from '../../assets/second_card.png';
 
-const Optimetry = () => {
+const Cardiology = () => {
 
-  const [startAnimation, setStartAnimation] = useState(false);
+    const [startAnimation, setStartAnimation] = useState(false);
 
   useEffect(() => {
     setStartAnimation(true);
   }, []);
-
-
   return (
     <div className={styles.container}>
       <div className={`${styles.humanContainer} ${startAnimation ? styles.start : ''}`}>
         <div className={styles.skeleton}>
-          <img src={humanFilled} alt="" width="100%" height="100%" />
+          <img src={human} alt="" width="100%" height="100%" />
         </div>
-        {/* <div className={styles.heart}>
+        <div className={styles.heart}>
           <img src={heart} alt="" width="100%" height="100%" />
-        </div> */}
+        </div>
         <div className={styles.loading}>
           <img src={bottomLoading} alt="" width="100%" height="100%" />
         </div>
@@ -37,7 +35,7 @@ const Optimetry = () => {
 
       <div className={styles.analysis}>
         <div className={`${styles.info_box} ${startAnimation ? styles.start : ''}`}>
-          <p className={styles.heading}>Blood Count</p>
+          <p className={styles.heading}>Hemodynamic</p>
           <div className={styles.date_img}>
             <p className={styles.start_date}>28.06.24</p>
             <p>28.06.24</p>
@@ -47,16 +45,16 @@ const Optimetry = () => {
         </div>
         <div className={styles.meter_box}>
           <div className={`${styles.single_meter} ${startAnimation ? styles.start : ''}`}>
-            {/* <img src={meter} alt="" width='100%' height='100%' /> */}
-            {/* <div className={styles.speedometer}></div> */}
+            <img src={meter} alt="" width='100%' height='100%' />
+            <div className={styles.speedometer}></div>
           </div>
           <div className={`${styles.single_meter} ${startAnimation ? styles.start : ''}`}>
-            {/* <img src={meter_two} alt="" width='100%' height='100%' /> */}
-            {/* <div className={styles.speedometer}></div> */}
+            <img src={meter_two} alt="" width='100%' height='100%' />
+            <div className={styles.speedometer}></div>
           </div>
           <div className={`${styles.single_meter} ${startAnimation ? styles.start : ''}`}>
-            {/* <img src={meter_third} alt="" width='100%' height='100%' /> */}
-            {/* <div className={styles.speedometer}></div> */}
+            <img src={meter_third} alt="" width='100%' height='100%' />
+            <div className={styles.speedometer}></div>
           </div>
         </div>
 
@@ -86,4 +84,4 @@ const Optimetry = () => {
   )
 }
 
-export default Optimetry
+export default Cardiology

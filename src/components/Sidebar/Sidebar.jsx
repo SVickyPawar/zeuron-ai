@@ -30,39 +30,66 @@ const Sidebar = () => {
 					<p>Optimetry</p>
 				</div>
 				</Link>
-				
+
+
+				<Link to='/neurology'>
 				<div className={styles.subMenu}>
 					<img src={neurology} alt="" />
 					<p>Neurology</p>
 				</div>
+				</Link>
+
+
+				<Link to='/phulmonology'>
 				<div className={styles.subMenu}>
 					<img src={phulmonology} alt="" />
 					<p>Phulmonology</p>
 				</div>
+				</Link>
+
+				<Link to='/cardiology'>
 				<div className={styles.subMenu}>
 					<img src={cardiology} alt="" />
 					<p>Cardiology</p>
 				</div>
+				</Link>
+				
+				<Link to='/radiography'>
 				<div className={styles.subMenu}>
 					<img src={radiography} alt="" />
 					<p>Radiography</p>
 				</div>
+				</Link>
+				
+				<Link to='/darmatology'>
 				<div className={styles.subMenu}>
 					<img src={darmatology} alt="" />
 					<p>Darmatology</p>
 				</div>
+				</Link>
+
+				<Link to='/analysis'>
 				<div className={styles.subMenu}>
 					<img src={analysis} alt="" />
 					<p>Analysis</p>
 				</div>
+				</Link>
+
+				<Link to='/help'>
 				<div className={styles.subMenu}>
 					<img src={help} alt="" />
 					<p>Help</p>
 				</div>
+				</Link>
+
+
+				<Link to='/settings'>
 				<div className={styles.subMenu}>
 					<img src={settings} alt="" />
 					<p>Settings</p>
 				</div>
+				</Link>
+							
 			</div>
 		</div>
 	);
